@@ -5,22 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/24 21:18:06 by neda-sil          #+#    #+#              #
-#    Updated: 2026/09/25 10:42:05 by neda-sil         ###   ########.fr        #
+#    Created: 2026/09/26 15:02:00 by neda-sil          #+#    #+#              #
+#    Updated: 2026/09/26 21:27:19 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #			FILES
 
-files	=	Contact		\
-			PhoneBook	\
-			main
-fcpp	=	$(addsuffix .cpp, $(files))
+files	=	Account tests
+fcpp	=	$(addsuffix .c, $(files))
 objs	=	$(addsuffix .o, $(files))
 
 #			ARGS
 
-NAME	=	phonebook
+NAME	=	bank
 comp	=	c++
 flags	=	-Wall -Werror -Wextra -std=c++98
 
@@ -31,17 +29,15 @@ all		:	$(NAME)
 $(NAME)	:	$(objs)
 	$(comp) $(flags) $(objs) -o $(NAME)
 
-%.o		:	%.c
+%.o		:	%.cpp
 	$(comp) $(flags) -c $< -o $@
 
 clean	:
 	rm -rf $(objs)
 
 fclean	:	clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re		:	fclean all
 
-.PHONY	: all clean fclean re
-
-# coucou si tu lis le Makefile, met moi tout bon stp
+.PHONY	:	all clean fclean re
