@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 17:18:50 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/09/25 23:19:40 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/09/29 12:05:12 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ namespace	verifs
 	//verifie que l'input soit bien un int (pour le choix de l'id dans SEARCH)
 	void	verif_only_num(void)
 	{
-		std::cout << "INVALID CARACTER" << std::endl;
+		std::cout << "INVALID CHARACTER" << std::endl;
 		std::cin.clear();
 		std::cin.ignore();
 	}
@@ -72,9 +72,9 @@ static void	_print_elem(std::string first, std::string second, std::string third
 {
 	std::cout << std::left <<
 	std::setw(10) << first << "|" <<
-	std::setw(10) << (second.size() > 11 ? second.substr(0, 9) + "." : second) << "|" <<
-	std::setw(10) << (third.size() > 11 ? third.substr(0, 9) + "." : third) << "|" <<
-	std::setw(10) << (fourth.size() > 11 ? fourth.substr(0, 9) + "." : fourth) << std::endl;
+	std::setw(10) << (second.size() > 10 ? second.substr(0, 9) + "." : second) << "|" <<
+	std::setw(10) << (third.size() > 10 ? third.substr(0, 9) + "." : third) << "|" <<
+	std::setw(10) << (fourth.size() > 10 ? fourth.substr(0, 9) + "." : fourth) << std::endl;
 }
 
 /*
@@ -88,18 +88,17 @@ void	PhoneBook::_select(void)
 	std::cout << "CHOOSE AN ID:" << std::endl;
 	int	input;
 	if (!(std::cin >> input))
-		verifs::verif_only_num();
-	verifs::verif_eof();
-	if (input < 1 || input > 8 || this->contacts[input - 1]._get_id() == 0)
+		return (verifs::verif_only_num());
+	if (input <= 0 || input > 8 || !contacts[input - 1]._get_id())
 		std::cout << "ID DOES NOT EXIST" << std::endl;
 	else
 	{
-		std::cout << "ID: " << this->contacts[input - 1]._get_id()<< std::endl;
-		std::cout << "FIRST_NAME: " << this->contacts[input - 1]._get_first_name()<< std::endl;
-		std::cout << "LAST NAME: " << this->contacts[input - 1]._get_last_name()<< std::endl;
-		std::cout << "NICKNAME: " << this->contacts[input - 1]._get_nickname()<< std::endl;
-		std::cout << "PHONE NUMBER: " << this->contacts[input - 1]._get_phone_number()<< std::endl;
-		std::cout << "DARKEST SECRET: " << this->contacts[input - 1]._get_darkest_secret()<< std::endl;
+		std::cout << "ID: " << contacts[input - 1]._get_id()<< std::endl;
+		std::cout << "FIRST_NAME: " << contacts[input - 1]._get_first_name()<< std::endl;
+		std::cout << "LAST NAME: " << contacts[input - 1]._get_last_name()<< std::endl;
+		std::cout << "NICKNAME: " << contacts[input - 1]._get_nickname()<< std::endl;
+		std::cout << "PHONE NUMBER: " << contacts[input - 1]._get_phone_number()<< std::endl;
+		std::cout << "DARKEST SECRET: " << contacts[input - 1]._get_darkest_secret()<< std::endl;
 	}
 }
 
@@ -115,19 +114,17 @@ void	PhoneBook::_search()
 {
 	_print_elem("ID", "FIRST_NAME", "LAST_NAME", "NICKNAME");
 	int	i = 0;
-	int	id = this->contacts[0]._get_id();
-	while (id != 0 && id <= 8)
+	while (contacts[i]._get_id() != 0 && i <= 7)
 	{
 		std::ostringstream	oss;
-		oss << id;
+		oss << i + 1;
 		_print_elem(oss.str(),
-			this->contacts[i]._get_first_name(),
-			this->contacts[i]._get_last_name(),
-			this->contacts[i]._get_nickname());
+			contacts[i]._get_first_name(),
+			contacts[i]._get_last_name(),
+			contacts[i]._get_nickname());
 		i++;
-		id = this->contacts[i]._get_id();
 	}
-	if (i != 0)
+	if (i)
 		_select();
 }
 
