@@ -6,13 +6,13 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 14:22:52 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/01 17:19:42 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/04 14:52:19 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-std::string	Weapon::getType()
+const std::string	&Weapon::getType() const
 {
 	return _type;
 }

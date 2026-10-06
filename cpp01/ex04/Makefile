@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/02 11:39:15 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/02 13:56:21 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/05 14:29:26 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ objs	=	$(addsuffix .o, $(FILES))
 NAME	=	files
 comp	=	c++
 flags	=	-Wall -Wextra -Werror -std=c++98
+test	=	test
 
 #			RULES
 
@@ -33,21 +34,21 @@ $(NAME)	:	$(objs)
 	$(comp) $(flags) -c $< -o $@
 
 test1	:	all
-	@echo "coucou je suis Brigitte" > inFile
-	@./$(NAME) inFile "coucou" bonjour
+	@echo "coucou je suis Brigitte" > $(test)
+	@./$(NAME) $(test) "coucou" bonjour
 
 test2	:	all
-	@echo "jh nh sais pas ch quh jh pourrais hssayhr" > inFile
-	@./$(NAME) inFile h e
+	@echo "jh nh sais pas ch quh jh pourrais hssayhr" > $(test)
+	@./$(NAME) $(test) h e
 
 test3	:	all
-	@echo "faisons" > inFile
-	@echo "plusieurs" >> inFile
-	@echo "colonnes" >> inFile
-	@./$(NAME) inFile colonnes lignes
+	@echo "faisons" > $(test)
+	@echo "plusieurs" >> $(test)
+	@echo "colonnes" >> $(test)
+	@./$(NAME) $(test) colonnes lignes
 
 clean	:
-	rm -rf $(objs) inFile*
+	rm -rf $(objs) $(test) $(test).replace
 
 fclean	:	clean
 	rm -rf $(NAME)

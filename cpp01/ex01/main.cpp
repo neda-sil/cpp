@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 13:13:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/01 13:59:17 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/04 15:01:25 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(void)
 {
 	Zombie* horde;
 	horde = zombieHorde(10, "jeff");
+	if (!horde)
+		return 1;
 	for (int i=0;i<10;i++)
 		horde[i].announce();
 	delete[] horde;

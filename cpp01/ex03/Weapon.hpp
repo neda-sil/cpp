@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 14:22:44 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/01 14:46:31 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/04 14:51:47 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon
 		std::string	_type;
 
 	public:
-		std::string	getType();
+		const std::string	&getType() const;
 		void	setType(std::string type);
 		Weapon(std::string weapon);
 		~Weapon();

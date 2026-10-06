@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 14:02:58 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/01 14:20:55 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/05 14:21:08 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,8 @@ int	main(void)
 				 *stringPTR << "\n" <<
 				 stringREF << std::endl;
 }
+
+/*
+	*Pointeur : pointe vers une adresse memoire d'une variable, on doit dereferencer ("*") pour obtenir la valeure.
+	&Reference : est comme un "alias" d'une variable qui existe deja, elle pointe vers la meme zone memoire sans syntaxe particuliere pour y acceder
+*/

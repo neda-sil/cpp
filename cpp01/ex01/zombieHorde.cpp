@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 13:13:56 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/01 13:53:11 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/04 14:59:26 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Zombie*		zombieHorde(int n, std::string name)
 {
+	if (n < 0)
+		return std::cout << "No negative hordes" << std::endl, static_cast<Zombie*>(NULL);
 	Zombie*	horde = new Zombie[n];
 	for (int i=0;i<n;i++)
 		horde[i].zombie_name(name);
