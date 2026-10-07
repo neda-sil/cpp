@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:08 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/06 16:00:59 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/07 12:49:36 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class	Fixed
 {
 	private:
-		int					*_fixed_int;
+		int					_fixed_int;
 		static const int	_fractionalBits = 8;
 
 	public:
 		int		getRawBits(void) const;
-		void	settRawBits(int const raw);
+		void	setRawBits(int const raw);
 
 		Fixed();
 		Fixed(const Fixed &copy);
