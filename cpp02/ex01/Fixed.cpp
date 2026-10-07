@@ -6,31 +6,40 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/06 17:59:28 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/07 22:29:58 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+//Other functions
+
+std::ostream	&operator<<(std::ostream &os, const Fixed &value)
+{
+	os << value.toFloat();
+	return os;
+}
+
+//Fixed class functions
+
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called\n";
-	return *_fixed_int;
+	return _fixed_int;
 }
 
-void	Fixed::settRawBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
-	*_fixed_int = raw;
+	_fixed_int = raw;
 }
 
-float	Fixed::toFloat(void)
+float	Fixed::toFloat(void) const
 {
-
+	return static_cast<float>(_fixed_int) / (1 << _fractionalBits);
 }
 
-int	Fixed::toInt(void)
+int	Fixed::toInt(void) const
 {
-
+	return _fixed_int >> _fractionalBits;
 }
 
 //Constructors and Destructors parts
@@ -38,38 +47,36 @@ int	Fixed::toInt(void)
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called\n";
-	_fixed_int = new int(0); //heap memory allocation
+	_fixed_int = 0;
 }
 
 Fixed::Fixed(const int value)
 {
-	_fixed_int = new int(value);
+	std::cout << "Int constructor called" << std::endl;
+	_fixed_int = value << _fractionalBits;
+}
+
+Fixed::Fixed(const float value)
+{
+	std::cout << "Float constructor called" << std::endl;
+	_fixed_int = roundf(value * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called\n";
-	_fixed_int = new int(other.getRawBits()); //deep copy
+	_fixed_int = other.getRawBits();
 }
 
 Fixed	&Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignement operator called\n";
 	if (this != &other) //avoid self assignement
-	{
-		delete _fixed_int; //clean up old memory
-		this->_fixed_int = new int(other.getRawBits()); //deep copy
-	}
-	return *this; //returning a pointer to the current instance
-}
-
-Fixed	&operator<<(const float &value)
-{
-	
+		this->_fixed_int = other.getRawBits();
+	return *this; //returning a reference to the current instance
 }
 
 Fixed::~Fixed(void)
 {
-	delete _fixed_int; //cleaning up the stack
 	std::cout << "Destructor called" << std::endl;
 }
