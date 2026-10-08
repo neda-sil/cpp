@@ -6,18 +6,31 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/07 22:29:58 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/09 01:38:06 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//Other functions
+//Operators functions
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &value)
 {
 	os << value.toFloat();
 	return os;
+}
+
+Fixed	&Fixed::operator=(const Fixed &other)
+{
+	std::cout << "Copy assignement operator called\n";
+	if (this != &other) //avoid self assignement
+		this->_fixed_int = other.getRawBits();
+	return *this; //returning a reference to the current instance
+}
+
+Fixed	&Fixed::operator+(const Fixed &other)
+{
+	return this->toFloat() + other.toFloat();
 }
 
 //Fixed class functions
@@ -66,14 +79,6 @@ Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called\n";
 	_fixed_int = other.getRawBits();
-}
-
-Fixed	&Fixed::operator=(const Fixed &other)
-{
-	std::cout << "Copy assignement operator called\n";
-	if (this != &other) //avoid self assignement
-		this->_fixed_int = other.getRawBits();
-	return *this; //returning a reference to the current instance
 }
 
 Fixed::~Fixed(void)

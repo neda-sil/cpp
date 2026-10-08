@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:08 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/07 22:14:05 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/09 01:29:56 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,16 @@ class	Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
+		Fixed	&operator=(const Fixed &other);
+		Fixed	&operator+(const Fixed &other);
+		Fixed	&operator-(const Fixed &other);
+		Fixed	&operator*(const Fixed &other);
+		Fixed	&operator/(const Fixed &other);
+
 		Fixed();
 		Fixed(const int value);
 		Fixed(const float value);
 		Fixed(const Fixed &copy);
-		Fixed &operator=(const Fixed &other);
 		~Fixed();
 };
 
