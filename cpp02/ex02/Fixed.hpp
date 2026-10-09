@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:08 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/09 01:29:56 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/09 13:16:17 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,33 @@ class	Fixed
 		static const int	_fractionalBits = 8;
 
 		public:
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
+		float				toFloat(void) const;
+		int					toInt(void) const;
 
-		Fixed	&operator=(const Fixed &other);
-		Fixed	&operator+(const Fixed &other);
-		Fixed	&operator-(const Fixed &other);
-		Fixed	&operator*(const Fixed &other);
-		Fixed	&operator/(const Fixed &other);
+		bool				operator>(const Fixed &other) const;
+		bool				operator<(const Fixed &other) const;
+		bool				operator>=(const Fixed &other) const;
+		bool				operator<=(const Fixed &other) const;
+		bool				operator==(const Fixed &other) const;
+		bool				operator!=(const Fixed &other) const;
+
+		Fixed				&operator=(const Fixed &other);
+		Fixed				operator+(const Fixed &other) const;
+		Fixed				operator-(const Fixed &other) const;
+		Fixed				operator*(const Fixed &other) const;
+		Fixed				operator/(const Fixed &other) const;
+
+		Fixed				&operator++(void);
+		Fixed				operator++(int value);
+		Fixed				&operator--(void);
+		Fixed				operator--(int value);
+
+		static const Fixed	&max(const Fixed &a, const Fixed &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static Fixed		&min(Fixed &a, Fixed &b);
 
 		Fixed();
 		Fixed(const int value);

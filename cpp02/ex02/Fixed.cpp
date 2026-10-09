@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/09 01:38:06 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/09 13:23:35 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,137 @@ std::ostream	&operator<<(std::ostream &os, const Fixed &value)
 	return os;
 }
 
+//Comparison operators
+
+bool				Fixed::operator>(const Fixed &other) const
+{
+	return this->getRawBits() > other.getRawBits();
+}
+
+bool				Fixed::operator<(const Fixed &other) const
+{
+	return this->getRawBits() < other.getRawBits();
+}
+
+bool				Fixed::operator>=(const Fixed &other) const
+{
+	return this->getRawBits() >= other.getRawBits();
+}
+
+bool				Fixed::operator<=(const Fixed &other) const
+{
+	return this->getRawBits() <= other.getRawBits();
+}
+
+bool				Fixed::operator==(const Fixed &other) const
+{
+	return this->getRawBits() == other.getRawBits();
+}
+
+bool				Fixed::operator!=(const Fixed &other) const
+{
+	return this->getRawBits() != other.getRawBits();
+}
+
+//Arithmetic operators
+
 Fixed	&Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Copy assignement operator called\n";
 	if (this != &other) //avoid self assignement
 		this->_fixed_int = other.getRawBits();
 	return *this; //returning a reference to the current instance
 }
 
-Fixed	&Fixed::operator+(const Fixed &other)
+Fixed	Fixed::operator+(const Fixed &other) const
 {
-	return this->toFloat() + other.toFloat();
+	Fixed	result;
+
+	result.setRawBits(roundf(this->getRawBits() + other.getRawBits()));
+	return result;
+}
+
+Fixed	Fixed::operator-(const Fixed &other) const
+{
+	Fixed	result;
+
+	result.setRawBits(roundf(this->getRawBits() - other.getRawBits()));
+	return result;
+}
+
+Fixed	Fixed::operator*(const Fixed &other) const
+{
+	Fixed	result;
+
+	result.setRawBits(roundf(this->getRawBits() * other.toFloat()));
+	return result;
+}
+
+Fixed	Fixed::operator/(const Fixed &other) const
+{
+	Fixed	result;
+
+	result.setRawBits(roundf(this->getRawBits() / other.toInt()));
+	return result;
+}
+
+// Increment/decrement operators
+
+Fixed	&Fixed::operator++(void)
+{
+	this->setRawBits(this->getRawBits() + 1);
+	return *this;
+}
+
+Fixed	Fixed::operator++(int value)
+{
+	static_cast<void>(value);
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits());
+	this->setRawBits(this->getRawBits() + 1);
+	return result;
+}
+Fixed	&Fixed::operator--(void)
+{
+	this->setRawBits(this->getRawBits() - 1);
+	return *this;
+}
+
+Fixed	Fixed::operator--(int value)
+{
+	static_cast<void>(value);
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits());
+	this->setRawBits(this->getRawBits() - 1);
+	return result;
+}
+
+// Fixed	&Fixed::operator--(void)
+// {
+	
+// }
+
+//Static comparison functions
+
+Fixed const	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return (a.getRawBits() > b.getRawBits()) ? a : b;
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a.getRawBits() > b.getRawBits()) ? a : b;
+}
+
+Fixed const	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return (a.getRawBits() < b.getRawBits()) ? a : b;
+}
+
+Fixed		&Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a.getRawBits() < b.getRawBits()) ? a : b;
 }
 
 //Fixed class functions
@@ -59,29 +179,24 @@ int	Fixed::toInt(void) const
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called\n";
 	_fixed_int = 0;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
 	_fixed_int = value << _fractionalBits;
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
 	_fixed_int = roundf(value * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &other)
 {
-	std::cout << "Copy constructor called\n";
 	_fixed_int = other.getRawBits();
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
