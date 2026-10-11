@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:54:57 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/09 13:29:18 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/11 15:45:16 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	own_tests(Fixed a, Fixed b) // a = 0.0078125, b = 10.1016
 	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
 
-	std::cout << b / Fixed (2) << std::endl;
+	std::cout << b / Fixed (0) << std::endl;
+	std::cout << b / Fixed (0.5f) << std::endl;
 	std::cout << Fixed::min(a, b) << std::endl;
 	c = Fixed::max(a, b);
 	std::cout << c << std::endl;

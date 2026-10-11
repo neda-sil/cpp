@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/09 13:23:35 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/11 15:51:08 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ Fixed	Fixed::operator+(const Fixed &other) const
 {
 	Fixed	result;
 
-	result.setRawBits(roundf(this->getRawBits() + other.getRawBits()));
+	result.setRawBits(this->getRawBits() + other.getRawBits());
 	return result;
 }
 
@@ -73,7 +73,7 @@ Fixed	Fixed::operator-(const Fixed &other) const
 {
 	Fixed	result;
 
-	result.setRawBits(roundf(this->getRawBits() - other.getRawBits()));
+	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return result;
 }
 
@@ -89,7 +89,12 @@ Fixed	Fixed::operator/(const Fixed &other) const
 {
 	Fixed	result;
 
-	result.setRawBits(roundf(this->getRawBits() / other.toInt()));
+	if (other.toFloat() == 0)
+	{
+		std::cerr << "Dividing by 0 is impossible, returning 0\n";
+		return result;
+	}
+	result.setRawBits(roundf(this->getRawBits() / other.toFloat()));
 	return result;
 }
 
@@ -110,6 +115,7 @@ Fixed	Fixed::operator++(int value)
 	this->setRawBits(this->getRawBits() + 1);
 	return result;
 }
+
 Fixed	&Fixed::operator--(void)
 {
 	this->setRawBits(this->getRawBits() - 1);
@@ -125,11 +131,6 @@ Fixed	Fixed::operator--(int value)
 	this->setRawBits(this->getRawBits() - 1);
 	return result;
 }
-
-// Fixed	&Fixed::operator--(void)
-// {
-	
-// }
 
 //Static comparison functions
 
@@ -195,8 +196,10 @@ Fixed::Fixed(const float value)
 Fixed::Fixed(const Fixed &other)
 {
 	_fixed_int = other.getRawBits();
+	// std::cout << "CONSTRUCTOR CALLED\n";
 }
 
 Fixed::~Fixed(void)
 {
+	// std::cout << "DESTRUCTOR CALLED\n";
 }
