@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:45 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/13 15:53:12 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 17:09:30 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << _name << " repaires " << amount << "hp! He have " << _hit_point << "hp left" << std::endl;
 }
 
-// Constructor and Destructor
+// Constructors and Destructors
 
 ClapTrap::ClapTrap()
 {

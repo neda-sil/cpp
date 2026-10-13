@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:08 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/09 13:16:17 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 14:36:14 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class	Fixed
 		bool				operator==(const Fixed &other) const;
 		bool				operator!=(const Fixed &other) const;
 
-		Fixed				&operator=(const Fixed &other);
 		Fixed				operator+(const Fixed &other) const;
 		Fixed				operator-(const Fixed &other) const;
 		Fixed				operator*(const Fixed &other) const;
@@ -55,6 +54,7 @@ class	Fixed
 		Fixed(const int value);
 		Fixed(const float value);
 		Fixed(const Fixed &copy);
+		Fixed &operator=(const Fixed &other);
 		~Fixed();
 };
 

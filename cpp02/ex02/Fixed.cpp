@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/11 15:51:08 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 14:36:41 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,6 @@ bool				Fixed::operator!=(const Fixed &other) const
 }
 
 //Arithmetic operators
-
-Fixed	&Fixed::operator=(const Fixed &other)
-{
-	if (this != &other) //avoid self assignement
-		this->_fixed_int = other.getRawBits();
-	return *this; //returning a reference to the current instance
-}
 
 Fixed	Fixed::operator+(const Fixed &other) const
 {
@@ -197,6 +190,13 @@ Fixed::Fixed(const Fixed &other)
 {
 	_fixed_int = other.getRawBits();
 	// std::cout << "CONSTRUCTOR CALLED\n";
+}
+
+Fixed	&Fixed::operator=(const Fixed &other)
+{
+	if (this != &other) //avoid self assignement
+		this->_fixed_int = other.getRawBits();
+	return *this; //returning a reference to the current instance
 }
 
 Fixed::~Fixed(void)
