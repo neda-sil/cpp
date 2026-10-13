@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 14:21:56 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/02 15:16:46 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 13:42:54 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	Harl::complain(std::string level)
 
 Harl::Harl(void)
 {
-	std::cout << "There's been a change of plans, you don't need to come to the Ranch. Meet me at Stoner Cement Works, a little up Senora Road from there." <<std::endl;
+	std::cout << "CONSTRUCTOR\nThere's been a change of plans, you don't need to come to the Ranch. Meet me at Stoner Cement Works, a little up Senora Road from there." <<std::endl;
 }
 
 Harl::~Harl(void)
 {
-
+	std::cout << "DESTRUCTOR\nNow, unfortunately, I think that we're gonna have to lay low for a little while while, y'know, we discuss things with Martin." << std::endl;
 }

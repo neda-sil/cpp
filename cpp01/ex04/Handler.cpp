@@ -6,23 +6,11 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 13:17:35 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/02 13:57:22 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 12:00:16 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Handler.hpp"
-
-Handler::Handler(str filename, str s1, str s2) : _filename(filename), _s1(s1), _s2(s2)
-{
-	std::cout << "Constructor of Handler called" << std::endl;
-}
-
-Handler::~Handler(void)
-{
-	_inFile.close();
-	_outFile.close();
-	std::cout << "Destructor of Handler called" << std::endl;
-}
 
 /*
 	on recupere le nom du fichier passe en argument et on rajoute ".replace" pour le mettre a la fin du fichier qui va etre cree
@@ -71,4 +59,16 @@ void	Handler::replaceFromFile(void)
 			index = occ + _s2.length();
 		}
 	}
+}
+
+Handler::Handler(str filename, str s1, str s2) : _filename(filename), _s1(s1), _s2(s2)
+{
+	std::cout << "Constructor of Handler called" << std::endl;
+}
+
+Handler::~Handler(void)
+{
+	_inFile.close();
+	_outFile.close();
+	std::cout << "Destructor of Handler called" << std::endl;
 }
