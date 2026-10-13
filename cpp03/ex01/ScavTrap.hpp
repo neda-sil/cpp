@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 17:03:37 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/13 17:36:37 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 18:29:51 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ class	ScavTrap : public ClapTrap
 		bool	_guardGate;
 
 	public:
-		bool	getGGStatus();
-		void	guardGate();
-		ScavTrap();
+		bool	getGGStatus(void);
+		void	guardGate(void);
+		ScavTrap(void);
 		ScavTrap(str name, unsigned int hp, unsigned int ener_pt, unsigned int att_dam);
-		~ScavTrap();
+		ScavTrap(ScavTrap &other);
+		ScavTrap	&operator=(ScavTrap &other);
+		~ScavTrap(void);
 };
 
 #endif

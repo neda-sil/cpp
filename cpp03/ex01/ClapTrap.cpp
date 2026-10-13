@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:45 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/13 15:53:12 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 18:29:08 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,46 @@
 
 // Get private values functions
 
-str	ClapTrap::getName() const
+str	ClapTrap::getName(void) const
 {
 	return _name;
 }
 
-unsigned int	ClapTrap::getHP() const
+unsigned int	ClapTrap::getHP(void) const
 {
 	return _hit_point;
 }
 
-unsigned int	ClapTrap::getEnergyPoint() const
+unsigned int	ClapTrap::getEnergyPoint(void) const
 {
 	return _energy_point;
 }
 
-unsigned int	ClapTrap::getAttackDamage() const
+unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return _attack_damage;
+}
+
+// Set private values
+
+void	ClapTrap::setName(const str name)
+{
+	_name = name;
+}
+
+void	ClapTrap::setHP(const int amount)
+{
+	_hit_point = amount;
+}
+
+void	ClapTrap::setEnergyPoint(const int amount)
+{
+	_energy_point = amount;
+}
+
+void	ClapTrap::setAttackDamage(const int amount)
+{
+	_attack_damage = amount;
 }
 
 // Public functions
@@ -87,7 +109,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 // Constructor and Destructor
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(void)
 {
 	std::cout << "Empty Claptrap constructor called" << std::endl;
 }
@@ -121,7 +143,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap &other)
 	return *this;
 }
 
-ClapTrap::~ClapTrap()
+ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }

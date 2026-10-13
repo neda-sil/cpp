@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:46 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/13 15:50:17 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/13 18:28:56 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ class	ClapTrap
 		unsigned int	_attack_damage;
 
 	public:
-		str				getName() const;
-		unsigned int	getHP() const;
-		unsigned int	getEnergyPoint() const;
-		unsigned int	getAttackDamage() const;
+		str				getName(void) const;
+		unsigned int	getHP(void) const;
+		unsigned int	getEnergyPoint(void) const;
+		unsigned int	getAttackDamage(void) const;
 
 		void		attack(const str &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 
-		ClapTrap();
+		ClapTrap(void);
 		ClapTrap(str name, int hp, int ener_pt, int att_damage);
 		ClapTrap(ClapTrap &other);
 		ClapTrap &operator=(ClapTrap &other);
-		~ClapTrap();
+		~ClapTrap(void);
 };
 
 #endif
