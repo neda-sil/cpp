@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/07 22:29:58 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/14 14:23:20 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,24 @@ int	Fixed::toInt(void) const
 
 //Constructors and Destructors parts
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _fixed_int(0)
 {
 	std::cout << "Default constructor called\n";
-	_fixed_int = 0;
 }
 
-Fixed::Fixed(const int value)
+Fixed::Fixed(const int value) : _fixed_int(value << _fractionalBits)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_fixed_int = value << _fractionalBits;
 }
 
-Fixed::Fixed(const float value)
+Fixed::Fixed(const float value) : _fixed_int(roundf(value * (1 << _fractionalBits)))
 {
 	std::cout << "Float constructor called" << std::endl;
-	_fixed_int = roundf(value * (1 << _fractionalBits));
 }
 
-Fixed::Fixed(const Fixed &other)
+Fixed::Fixed(const Fixed &other) : _fixed_int(other.getRawBits())
 {
 	std::cout << "Copy constructor called\n";
-	_fixed_int = other.getRawBits();
 }
 
 Fixed	&Fixed::operator=(const Fixed &other)

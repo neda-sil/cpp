@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 15:55:14 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/13 14:36:41 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/14 14:24:54 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,24 +171,23 @@ int	Fixed::toInt(void) const
 
 //Constructors and Destructors parts
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _fixed_int(0)
 {
-	_fixed_int = 0;
+
 }
 
-Fixed::Fixed(const int value)
+Fixed::Fixed(const int value) : _fixed_int(value << _fractionalBits)
 {
-	_fixed_int = value << _fractionalBits;
+
 }
 
-Fixed::Fixed(const float value)
+Fixed::Fixed(const float value) : _fixed_int(roundf(value * (1 << _fractionalBits)))
 {
-	_fixed_int = roundf(value * (1 << _fractionalBits));
+
 }
 
-Fixed::Fixed(const Fixed &other)
+Fixed::Fixed(const Fixed &other) : _fixed_int(other.getRawBits())
 {
-	_fixed_int = other.getRawBits();
 	// std::cout << "CONSTRUCTOR CALLED\n";
 }
 
