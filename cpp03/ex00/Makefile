@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/13 14:09:48 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/13 14:58:51 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/16 18:35:03 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@
 FILES	=	main ClapTrap
 HEADERS	=	ClapTrap.hpp
 
-cfiles	=	$(addsuffix .cpp, $(FILES))
 objs	=	$(addsuffix .o, $(FILES))
 
 #			NAMES
