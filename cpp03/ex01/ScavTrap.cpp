@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 19:09:06 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 21:53:38 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:21:12 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	ScavTrap::attack(const std::string &target)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
+	if (!_hit_point)
+		std::cout << "ScavTrap " << _name << " is dead, rip in peace" << std::endl;
+	else
+		std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
 }
 
 // Constructors and destructors
@@ -61,6 +64,9 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
+	_hit_point = 100;
+	_energy_point = 50;
+	_attack_damage = 20;
 	std::cout << "Empty ScavTrap constructor called" << std::endl;
 }
 

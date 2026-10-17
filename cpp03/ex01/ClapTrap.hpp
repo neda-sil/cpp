@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:46 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 23:41:59 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:18:51 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class	ClapTrap
 		explicit ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap &operator=(const ClapTrap &other);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 };
 
 #endif

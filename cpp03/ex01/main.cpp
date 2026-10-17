@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:47 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 21:39:27 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:24:27 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 	std::cout << "\n";
 	ScavTrap	b;
 	b = romeo;
+	ScavTrap c(b);
 	std::cout << "\n";
 	romeo.beRepaired(1);
 	romeo.beRepaired(1);
@@ -35,6 +36,10 @@ int	main(void)
 	romeo.attack("Benjamin");
 	romeo.beRepaired(1);
 	std::cout << "\n";
+	romeo.guardGate();
+	romeo.guardGate();
+	romeo.guardGate();
+	std::cout << "\n";
 	romeo.takeDamage(1);
 	romeo.takeDamage(1);
 	romeo.takeDamage(1);
@@ -44,5 +49,13 @@ int	main(void)
 	romeo.takeDamage(std::numeric_limits<unsigned int>::max());
 	std::cout << "\n";
 	romeo.takeDamage(100);
+	std::cout << "\n";
+	romeo.guardGate();
+	std::cout << "\n";
+	std::cout << "Trying if allocating on the stack creates a leaks or not :\n";
+	ScavTrap *p = new ScavTrap("*p");
+	p->attack("test");
+	std::cout << "\n";
+	delete p;
 	std::cout << "\n";
 }

@@ -6,14 +6,14 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 19:08:58 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 21:55:43 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:25:06 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class	ScavTrap : public ClapTrap
 {
