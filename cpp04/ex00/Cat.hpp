@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:35 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 17:18:41 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 19:28:30 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 class	Cat : public Animal
 {
 	public:
-		void		makeSound(void) const;
-		std::string	getType(void) const;
+		void	makeSound(void) const;
 		
 		Cat(void);
 		Cat(const Cat &other);

@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:41 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 17:19:21 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 19:46:07 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 void	Cat::makeSound(void) const
 {
 	std::cout << "miaou miaou" << std::endl;
-}
-
-std::string	Cat::getType(void) const
-{
-	return _type;
 }
 
 // Constructors and destructors
@@ -41,7 +36,7 @@ Cat	&Cat::operator=(const Cat &other)
 {
 	if (this != &other)
 		Animal::operator=(other);
-	std::cout << "Cat copy operator called";
+	std::cout << "Cat copy operator called" << std::endl;
 	return *this;
 }
 

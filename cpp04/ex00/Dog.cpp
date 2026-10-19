@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:25 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 17:17:31 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/17 19:46:01 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 void	Dog::makeSound(void) const
 {
 	std::cout << "wouf wouf" << std::endl;
-}
-
-std::string	Dog::getType(void) const
-{
-	return _type;
 }
 
 // Constructors and destructors
@@ -41,7 +36,7 @@ Dog	&Dog::operator=(const Dog &other)
 {
 	if (this != &other)
 		Animal::operator=(other);
-	std::cout << "Dog copy operator called";
+	std::cout << "Dog copy operator called" << std::endl;
 	return *this;
 }
 
