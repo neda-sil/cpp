@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/13 14:09:48 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/17 14:21:10 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/19 15:27:05 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,10 @@ $(NAME)	:	$(objs)
 
 %.o		:	%.cpp $(HEADERS)
 	$(comp) $(flags) -c $< -o $@
+
+leaks	:	all
+	valgrind --leak-check=full --track-fds=yes --show-leak-kinds=all -s ./$(NAME)
+
 
 clean	:
 	rm -rf $(objs)

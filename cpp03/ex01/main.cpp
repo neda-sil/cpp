@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:47 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 13:24:27 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/19 15:31:16 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ int	main(void)
 	std::cout << "\n";
 	std::cout << "Trying if allocating on the stack creates a leaks or not :\n";
 	ScavTrap *p = new ScavTrap("*p");
+	ScavTrap *tab = new ScavTrap[2];
 	p->attack("test");
 	std::cout << "\n";
 	delete p;
+	delete[] tab;
 	std::cout << "\n";
 }

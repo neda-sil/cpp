@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:41 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 19:45:55 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/20 14:34:30 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	WrongCat::makeSound(void) const
 {
-	std::cout << "PIN PON PIN PON" << std::endl;
+	std::cout << "WRONG MIAOU" << std::endl;
 }
 
 // Constructors and destructors

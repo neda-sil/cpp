@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:41 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/18 14:10:48 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/20 16:08:54 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,28 @@ void	Cat::makeSound(void) const
 	std::cout << "miaou miaou" << std::endl;
 }
 
+void	Cat::setThought(const std::string idea)
+{
+	_brain->setIdea(idea);
+}
+
+const std::string	Cat::getThought(unsigned int id) const
+{
+	return _brain->getIdea(id);
+}
+
 // Constructors and destructors
 
 Cat::Cat(void) : Animal()
 {
 	_type = "Cat";
-	_brain = NULL;
+	_brain = new Brain;
 	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal(other)
 {
-	*_brain = Brain((*other._brain));
+	Brain((*other._brain));
 	std::cout << "Cat copy called" << std::endl;
 }
 
@@ -39,7 +49,7 @@ Cat	&Cat::operator=(const Cat &other)
 	if (this != &other)
 	{
 		Animal::operator=(other);
-		*_brain = Brain((*other._brain));
+		Brain((*other._brain));
 	}
 	std::cout << "Cat copy operator called" << std::endl;
 	return *this;
@@ -47,5 +57,6 @@ Cat	&Cat::operator=(const Cat &other)
 
 Cat::~Cat(void)
 {
+	delete _brain;
 	std::cout << "Cat destructor called" << std::endl;
 }

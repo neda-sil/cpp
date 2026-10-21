@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 13:04:02 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/18 14:43:27 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/20 15:54:10 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class	Brain
 {
 	private:
-		std::string	ideas[100];
-		static int	number;
+		std::string		_ideas[100];
+		unsigned int	_id;
 
 	public:
 		void				setIdea(const std::string &idea);
-		const std::string	getIdea(int id) const;
+		const std::string	getIdea(unsigned int id) const;
 
 		Brain(void);
 		Brain(const Brain &other);

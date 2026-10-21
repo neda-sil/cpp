@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:46 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 18:40:13 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:25:42 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ class	ClapTrap
 		unsigned int		getHP(void) const;
 		unsigned int		getEnergyPoint(void) const;
 		unsigned int		getAttackDamage(void) const;
-
-		// void				setName(const std::string &name);
-		// void				setHP(const unsigned int amount);
-		// void				setEnergyPoint(const unsigned int amount);
-		// void				setAttackDamage(const unsigned int amount);
 
 		void				attack(const std::string &target);
 		void				takeDamage(unsigned int amount);

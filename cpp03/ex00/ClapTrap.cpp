@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 14:09:45 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/16 18:56:59 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:39:09 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,6 @@ unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return _attack_damage;
 }
-
-// Set private values
-
-// void	ClapTrap::setName(const std::string &name)
-// {
-// 	_name = name;
-// }
-
-// void	ClapTrap::setHP(const unsigned int amount)
-// {
-// 	_hit_point = amount;
-// }
-
-// void	ClapTrap::setEnergyPoint(const unsigned int amount)
-// {
-// 	_energy_point = amount;
-// }
-
-// void	ClapTrap::setAttackDamage(const unsigned int amount)
-// {
-// 	_attack_damage = amount;
-// }
 
 // Public functions
 
@@ -94,7 +72,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!_hit_point)
 	{
-		std::cout << "ClapTrap " << _name << " has no hp left" << std::endl;
+		std::cout << "ClapTrap " << _name << " cannot revive" << std::endl;
 		return ;
 	}
 	else if (!_energy_point)

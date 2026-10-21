@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/18 13:43:13 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/20 14:36:39 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 
 void	own_tests()
 {
-	std::cout << "\nOWN TESTS\n";
+	std::cout << "\nOWN TESTS\n\nANIMALS CONSTRUCTORS\n\n";
 	Dog a;
 	Cat b;
 	Dog c(a);
 	Cat d(b);
 	a = c;
 	b = d;
-	std::cout << std::endl;
+	std::cout << "\nWRONG ANIMALS CONSTRUCTORS\n\n";
 	WrongAnimal	*cat = new WrongCat;
 	WrongCat test;
+	std::cout << "\nSOUNDS TESTS\n\n";
 	cat->makeSound();
 	test.makeSound();
+	std::cout << "\nDESTRUCTORS\n\n";
 	delete cat;
 	std::cout << std::endl;
 }
@@ -41,7 +43,7 @@ int	main(void)
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	j->makeSound(); //will output the dog sound!
 	meta->makeSound();
 	own_tests();
 	std::cout << std::endl;
