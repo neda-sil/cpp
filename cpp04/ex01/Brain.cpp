@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 13:03:50 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/20 15:54:07 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/21 17:16:39 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ const std::string	Brain::getIdea(unsigned int id) const
 
 // Constructors and destructors
 
-Brain::Brain(void)
+Brain::Brain(void) : _id(0)
 {
-	_id = 0;
 	for(int i=0;i<100;i++)
 		_ideas[i] = "";
 	std::cout << "Brain constructor called" << std::endl;
@@ -45,21 +44,21 @@ Brain::Brain(void)
 
 Brain::Brain(const Brain &other)
 {
-	for (int i = 0;other._ideas[i][0];i++)
+	for(int i=0;i<100;i++)
 		this->_ideas[i] = other._ideas[i];
 	this->_id = other._id;
-	std::cout << "Brain copy constructor called" << std::endl;
 }
 
 Brain	&Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{
-		for (int i = 0;other._ideas[i][0];i++)
+		std::cout << "DOIJWALD\n";
+		for(int i=0;i<100;i++)
 			this->_ideas[i] = other._ideas[i];
+		std::cout << "DOIJWALD\n";
 		this->_id = other._id;
 	}
-	
 	return *this;
 }
 

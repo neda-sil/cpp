@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/20 16:14:03 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/21 17:23:49 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ int	main(void)
 	// std::cout << cat.getThought(0) << std::endl;
 	// Cat cat2 = cat;
 	// std::cout << cat.getThought(0) << std::endl;
-	Dog	dog;
-	dog.setThought("coucou le chien");
-	std::cout << dog.getThought(0) << std::endl;
-	Dog dog2(dog);
-	std::cout << dog.getThought(0) << std::endl;
+	Dog	*dog = new Dog;
+	dog->setThought("coucou le chien");
+	std::cout << dog->getThought(0) << std::endl;
+	Dog *dog2 = new Dog(*dog);
+	Dog *dog3 = new Dog();
+	dog3 = dog;
+	std::cout << dog2->getThought(0) << std::endl;
+	std::cout << dog3->getThought(0) << std::endl;
 	for(int i = 0;i < 100;i++)
 	// 	delete tab[i];
 	return 0;
