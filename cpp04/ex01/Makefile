@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/17 16:10:30 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/18 13:44:01 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/22 14:16:29 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ objs	=	$(addsuffix .o, $(FILES))
 
 #			NAMES
 
-NAME	=	animal
+NAME	=	brain
 comp	=	c++
 flags	=	-Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/21 17:23:49 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:12:27 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,29 @@ int	main(void)
 	// std::cout << cat.getThought(0) << std::endl;
 	// Cat cat2 = cat;
 	// std::cout << cat.getThought(0) << std::endl;
-	Dog	*dog = new Dog;
-	dog->setThought("coucou le chien");
-	std::cout << dog->getThought(0) << std::endl;
-	Dog *dog2 = new Dog(*dog);
-	Dog *dog3 = new Dog();
-	dog3 = dog;
-	std::cout << dog2->getThought(0) << std::endl;
-	std::cout << dog3->getThought(0) << std::endl;
-	for(int i = 0;i < 100;i++)
-	// 	delete tab[i];
+	// Dog	*dog = new Dog;
+	// dog->setThought("coucou le chien");
+	// std::cout << dog->getThought(0) << std::endl;
+	// Dog *dog2 = new Dog(*dog);
+	// Dog *dog3 = new Dog();
+	// dog3 = dog;
+	// std::cout << dog2->getThought(0) << std::endl;
+	// std::cout << dog3->getThought(0) << std::endl;
+	// // for(int i = 0;i < 100;i++)
+	// // 	delete tab[i];
+	// delete dog;
+	// delete dog2;
+	// delete dog3;
+
+	Dog	*dog1 = new Dog;
+	dog1->setThought("coucou1");
+	Dog	*dog2 = new Dog(*dog1);
+
+	dog2->setThought("coucou2");
+
+	std::cout << "1 : " << dog1->getThought(1) << "\n2 : " << dog2->getThought(1) << std::endl;
+
+	delete dog1;
+	delete dog2;
 	return 0;
 }

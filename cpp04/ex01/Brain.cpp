@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 13:03:50 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/21 17:16:39 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:01:48 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,11 @@ Brain	&Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{
-		std::cout << "DOIJWALD\n";
 		for(int i=0;i<100;i++)
 			this->_ideas[i] = other._ideas[i];
-		std::cout << "DOIJWALD\n";
 		this->_id = other._id;
 	}
+	std::cout << "Brain operator assignment called" << std::endl;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:41 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/20 16:08:54 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/22 15:57:44 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cat::Cat(void) : Animal()
 
 Cat::Cat(const Cat &other) : Animal(other)
 {
-	Brain((*other._brain));
+	_brain = new Brain((*other._brain));
 	std::cout << "Cat copy called" << std::endl;
 }
 

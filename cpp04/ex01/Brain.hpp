@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 13:04:02 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/21 17:10:05 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/22 14:21:43 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Brain
 		const std::string	getIdea(unsigned int id) const;
 
 		Brain(void);
-		Brain(const Brain &other);
+		explicit Brain(const Brain &other);
 		Brain	&operator=(const Brain &other);
 		~Brain(void);
 };
