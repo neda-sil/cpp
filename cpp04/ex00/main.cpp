@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/20 14:36:39 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:04:16 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	own_tests()
 	WrongAnimal	*cat = new WrongCat;
 	WrongCat test;
 	std::cout << "\nSOUNDS TESTS\n\n";
+	a.makeSound();
+	b.makeSound();
 	cat->makeSound();
 	test.makeSound();
 	std::cout << "\nDESTRUCTORS\n\n";
