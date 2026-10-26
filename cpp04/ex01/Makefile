@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/17 16:10:30 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/22 14:16:29 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/26 16:49:17 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,12 @@ $(NAME)	:	$(objs)
 leaks	:	all
 	valgrind --leak-check=full --track-fds=yes --show-leak-kinds=all ./$(NAME)
 
+test	:	all
+	@./$(NAME) > test
+	@echo "CHECK 'TEST' FILE"
+
 clean	:
-	rm -rf $(objs)
+	rm -rf $(objs) test
 
 fclean	:	clean
 	rm -rf $(NAME)
