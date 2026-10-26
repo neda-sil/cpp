@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:09:41 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/22 15:57:44 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/26 14:56:19 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Cat	&Cat::operator=(const Cat &other)
 	if (this != &other)
 	{
 		Animal::operator=(other);
-		Brain((*other._brain));
+		*_brain = *other._brain;
 	}
 	std::cout << "Cat copy operator called" << std::endl;
 	return *this;

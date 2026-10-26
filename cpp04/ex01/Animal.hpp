@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:45 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/17 17:23:06 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/26 14:50:34 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Animal
 
 	public:
 		virtual void		makeSound(void) const;
-		virtual std::string	getType(void) const;
+		std::string			getType(void) const;
 
 		Animal(void);
 		Animal(const Animal &other);

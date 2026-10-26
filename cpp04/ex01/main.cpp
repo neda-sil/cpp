@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/22 16:12:27 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/26 14:53:51 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,22 @@ int	main(void)
 	// delete dog2;
 	// delete dog3;
 
+	std::cout << "la\n";
 	Dog	*dog1 = new Dog;
-	dog1->setThought("coucou1");
-	Dog	*dog2 = new Dog(*dog1);
+	std::cout << "ici\n";
+	// dog1->setThought("coucou1");
+	Dog	*dog2 = new Dog;
+	std::cout << "coucou\n";
 
-	dog2->setThought("coucou2");
+	*dog2 = *dog1;
+	std::cout << "la non\n";
+	// dog2->setThought("coucou2");
 
-	std::cout << "1 : " << dog1->getThought(1) << "\n2 : " << dog2->getThought(1) << std::endl;
+	// std::cout << "1 : " << dog1->getThought(1) << "\n2 : " << dog2->getThought(1) << std::endl;
 
+	std::cout << "c'est fini\n";
 	delete dog1;
+	std::cout << "c'est fini 2\n";
 	delete dog2;
 	return 0;
 }
