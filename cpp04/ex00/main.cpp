@@ -6,13 +6,15 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 16:08:27 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/26 15:04:16 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/27 12:47:46 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+
+// EXECUTE "MAKE TEST"
 
 void	own_tests()
 {
@@ -24,8 +26,8 @@ void	own_tests()
 	a = c;
 	b = d;
 	std::cout << "\nWRONG ANIMALS CONSTRUCTORS\n\n";
-	WrongAnimal	*cat = new WrongCat;
-	WrongCat test;
+	const WrongAnimal	*cat = new WrongCat;
+	const WrongCat test;
 	std::cout << "\nSOUNDS TESTS\n\n";
 	a.makeSound();
 	b.makeSound();
