@@ -6,14 +6,14 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/17 16:10:30 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/26 16:49:17 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/10/27 12:00:28 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #			FILES
 
-FILES	=	main Animal Dog Cat WrongAnimal WrongCat Brain
-HEADERS	=	Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+FILES	=	main Animal Dog Cat Brain
+HEADERS	=	Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
 objs	=	$(addsuffix .o, $(FILES))
 
@@ -37,14 +37,14 @@ leaks	:	all
 	valgrind --leak-check=full --track-fds=yes --show-leak-kinds=all ./$(NAME)
 
 test	:	all
-	@./$(NAME) > test
+	@make leaks > test
 	@echo "CHECK 'TEST' FILE"
 
 clean	:
-	rm -rf $(objs) test
+	rm -rf $(objs)
 
 fclean	:	clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) test
 
 re		:	fclean all
 
