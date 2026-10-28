@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 13:45:05 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/28 19:35:49 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/28 21:20:10 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ bool	bsp(const Point &A, const Point &B, const Point &C, const Point &pnt)
 	Fixed	d3(a * pnt.getX() + b * pnt.getY() + c);
 	std::cout << "\na : " << a << "\nb : " << b << "\nc : " << c << "\nd3 : " << d3 << "\n";
 
-	if ()
-	return true;
+	if ((d1 > 0 && d2 > 0 && d3 > 0) || (d1 < 0 && d2 < 0 && d3 < 0))
+		return true;
+	return false;
 }
