@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 14:21:56 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/10/28 13:21:05 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/10/28 13:29:15 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,28 @@ void	Harl::switching(int lvl)
 	switch(lvl)
 	{
 		case 0:
+			std::cout << "\n";
 			std::cout << "[DEBUG]\n";
 			Harl::debug();
+			std::cout << "\n";
 			Harl::complain("INFO");
 			break;
 		case 1:
 			std::cout << "[INFO]\n";
 			Harl::info();
+			std::cout << "\n";
 			Harl::complain("WARNING");
 			break;
 		case 2:
 			std::cout << "[WARNING]\n";
 			Harl::warning();
+			std::cout << "\n";
 			Harl::complain("ERROR");
 			break;
 		case 3:
 			std::cout << "[ERROR]\n";
 			Harl::error();
+			std::cout << "\n";
 			break;
 		default:
 			std::cout << "[DEFAULT]\nTrevor has nothing to say\n";
