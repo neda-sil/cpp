@@ -6,7 +6,7 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/27 13:26:02 by neda-sil          #+#    #+#              #
-#    Updated: 2026/10/27 13:52:13 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/11/03 17:11:50 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,4 +48,4 @@ fclean	:	clean
 
 re		:	fclean all
 
-.PHONY	: all clean fclean re
+.PHONY	: all clean fclean re leaks
