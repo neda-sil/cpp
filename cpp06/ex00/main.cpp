@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:01:55 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/12 16:45:53 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/13 15:00:08 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(int ac, char **av)
 {
-	if (ac == 1)
+	if (ac == 2 && av[1][0])
 		ScalarConverter::convert(av[1]);
 }
