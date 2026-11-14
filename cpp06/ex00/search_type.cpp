@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 19:31:57 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/15 00:09:41 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 00:23:39 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ types_t	define_type(const std::string &input)
 	if (input == "nanf" || input == "-inff" || input == "+inff" ||
 		input == "nan" || input == "-inf" || input == "+inf")
 		return SPECIAL;
-	if (isdigit(input[0]) || input[0] == '-' || input[0] == '+')
+	if (isdigit(input[0]) || (input[0] == '-' && isdigit(input[1])) || (input[0] == '+' && isdigit(input[1])))
 		return select_num_type(input);
 	if (input[0] && !input[1])
 		return CHAR;
