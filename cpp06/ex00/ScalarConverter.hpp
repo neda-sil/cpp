@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:45:18 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/15 00:20:52 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 00:34:13 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include <limits>
+# include <cstdlib>
+# include <cmath>
 
 # define MIN_INT std::numeric_limits<int>::min()
 # define MAX_INT std::numeric_limits<int>::max()
@@ -36,7 +38,8 @@ types_t	define_type(const std::string &input);
 
 // Printing functions
 
-void print_char(const int c);
+void	print_char(const int c);
+void	print_int(const std::string &input);
 
 class ScalarConverter
 {
