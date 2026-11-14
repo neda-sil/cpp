@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:45:18 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/14 20:04:22 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 00:20:52 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ typedef enum	types_e
 }				types_t;
 
 types_t	define_type(const std::string &input);
+
+// Printing functions
+
+void print_char(const int c);
 
 class ScalarConverter
 {

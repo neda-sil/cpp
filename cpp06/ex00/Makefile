@@ -6,13 +6,13 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/12 13:44:36 by neda-sil          #+#    #+#              #
-#    Updated: 2026/11/14 19:50:39 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/11/15 00:21:12 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #			FILES
 
-FILES	=	ScalarConverter search_type main
+FILES	=	ScalarConverter search_type print_conversions main
 HEADERS	=	ScalarConverter.hpp
 
 objs	=	$(addsuffix .o, $(FILES))

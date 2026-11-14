@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:57:01 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/14 20:04:29 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 00:20:20 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ScalarConverter::convert(const std::string &input)
 	switch (type)
 	{
 		case CHAR:
+			print_char(input[0]);
 			break;
 		case INT:
 			break;
