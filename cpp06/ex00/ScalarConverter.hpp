@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:45:18 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/13 16:37:38 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/14 20:04:22 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
 # define MAX_INT std::numeric_limits<int>::max()
 # define MIN_FLOAT std::numeric_limits<float>::min()
 # define MAX_FLOAT std::numeric_limits<float>::max()
-# define MIN_DOUBLE std::numeric_limits<double>::min()
-# define MAX_DOUBLE std::numeric_limits<double>::max()
 
 typedef enum	types_e
 {
 	CHAR,		// 0
 	INT,		// 1
 	FLOAT,		// 2
-	FLOAT_PL,	// 3
-	DOUBLE,		// 4
-	DOUBLE_PL,	// 5
-	INVALID		// 6
+	DOUBLE,		// 3
+	SPECIAL,	// 4
+	INVALID		// 5
 }				types_t;
+
+types_t	define_type(const std::string &input);
 
 class ScalarConverter
 {
