@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:45:18 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/15 14:06:43 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:31:21 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ types_t	define_type(const std::string &input);
 void	print_char(const int c);
 void	print_int(const std::string &input);
 void	print_float(const std::string &input);
-void	print_special(void);
+void	print_special(const std::string &input);
 
 class ScalarConverter
 {

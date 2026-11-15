@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 00:14:51 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/15 14:06:36 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:31:46 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ void	print_float(const std::string &input)
 		std::cout << "char: " << static_cast<char>(number) << "\nint: " << static_cast<int>(number) << "\nfloat: " << static_cast<float>(number) << "f\ndouble: " << number << std::endl;
 }
 
-void	print_special(void)
+void	print_special(const std::string &input)
 {
-	std::cout << "char: NON DISPLAYABLE\nint: IMPOSSIBLE\nfloat: nanf\ndouble: nan" << std::endl;
+	double number = std::strtod(input.c_str(), NULL);
+
+	std::cout << "char: NON DISPLAYABLE\nint: IMPOSSIBLE\nfloat: " << number << "f\ndouble: " << number << std::endl;
 }
