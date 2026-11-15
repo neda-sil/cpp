@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:57:01 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/15 00:30:48 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/15 14:05:19 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ void	ScalarConverter::convert(const std::string &input)
 			print_int(input);
 			break;
 		case FLOAT:
+			print_float(input);
 			break;
 		case DOUBLE:
+			print_float(input);
 			break;
 		case SPECIAL:
+			print_special();
 			break;
 		default:
 			// INVALID
