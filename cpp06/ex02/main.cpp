@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 13:59:36 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/17 09:30:58 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/17 11:26:54 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 int	main(void)
 {
 	Base *test = generate();
+
+	identify(test);
+	identify(*test);
 
 	delete test;
 }

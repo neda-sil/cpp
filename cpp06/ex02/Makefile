@@ -6,13 +6,13 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/12 13:44:36 by neda-sil          #+#    #+#              #
-#    Updated: 2026/11/16 14:15:57 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/11/17 11:09:37 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #			FILES
 
-FILES	=	Base A B C generate main
+FILES	=	Base A B C generate identify main
 HEADERS	=	Base.hpp A.hpp B.hpp C.hpp
 
 objs	=	$(addsuffix .o, $(FILES))
