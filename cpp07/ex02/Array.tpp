@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 13:52:04 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/19 14:32:38 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/20 18:21:10 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ size_t	Array<T>::size(void)
 // Operators
 
 template<typename T>
-T	Array<T>::operator[](int i)
+T	&Array<T>::operator[](size_t i)
 {
-	try
-	{
-		if (i < static_cast<int>(_len) || i > static_cast<int>(_len))
-			throw NotAccessible();
-		return _array[i];
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	return 0;
+	if (i >= _len)
+		throw NotAccessible();
+	return _array[i];
+}
+
+template<typename T>
+const T	&Array<T>::operator[](size_t i) const
+{
+	if (i >= _len)
+		throw NotAccessible();
+	return _array[i];
 }
 
 // Constructors and Destructors
@@ -45,7 +45,7 @@ Array<T>::Array() : _len(0), _array(NULL)
 }
 
 template<typename T>
-Array<T>::Array(size_t n) : _len(n), _array(new T[n])
+Array<T>::Array(size_t n) : _len(n), _array(new T[n]())
 {
 	
 }
@@ -53,7 +53,9 @@ Array<T>::Array(size_t n) : _len(n), _array(new T[n])
 template<typename T>
 Array<T>::Array(const Array &other)
 {
-	*this = other;
+	_array = new T[other._len];
+	for(size_t i = 0;i<other._len;i++)
+		this->_array[i] = other._array[i];
 }
 
 template<typename T>
@@ -61,7 +63,8 @@ Array<T> &Array<T>::operator=(const Array &other)
 {
 	if (this != &other)
 	{
-		*this = other;
+		for(size_t i = 0;i<other._len;i++)
+			this->_array[i] = other._array[i];
 	}
 	return *this;
 }
@@ -69,8 +72,7 @@ Array<T> &Array<T>::operator=(const Array &other)
 template<typename T>
 Array<T>::~Array()
 {
-	if (_array)
-		delete[] _array;
+
 }
 
 // Exception

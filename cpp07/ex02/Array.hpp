@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 13:52:07 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/19 14:30:36 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/20 18:12:40 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Array
 	public:
 		size_t	size(void);
 
-		T	operator[](int i);
+		T		&operator[](size_t i);
+		const T	&operator[](size_t i) const;
 
 		Array();
 		Array(size_t n);
