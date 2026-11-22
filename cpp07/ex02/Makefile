@@ -6,13 +6,13 @@
 #    By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/12 13:44:36 by neda-sil          #+#    #+#              #
-#    Updated: 2026/11/20 17:47:56 by neda-sil         ###   ########.fr        #
+#    Updated: 2026/11/22 14:52:31 by neda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #			FILES
 
-FILES	=	main2
+FILES	=	main
 HEADERS	=	Array.hpp
 
 objs	=	$(addsuffix .o, $(FILES))

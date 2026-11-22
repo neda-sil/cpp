@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 13:52:07 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/20 18:12:40 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/22 14:51:52 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include <stdlib.h>
 
 template<typename T>
 class Array

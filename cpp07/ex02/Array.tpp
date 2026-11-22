@@ -6,7 +6,7 @@
 /*   By: neda-sil <neda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 13:52:04 by neda-sil          #+#    #+#             */
-/*   Updated: 2026/11/20 18:21:10 by neda-sil         ###   ########.fr       */
+/*   Updated: 2026/11/22 15:33:22 by neda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,9 @@ Array<T>::Array(size_t n) : _len(n), _array(new T[n]())
 }
 
 template<typename T>
-Array<T>::Array(const Array &other)
+Array<T>::Array(const Array &other) : _len(0), _array(NULL)
 {
-	_array = new T[other._len];
-	for(size_t i = 0;i<other._len;i++)
-		this->_array[i] = other._array[i];
+	*this = other;
 }
 
 template<typename T>
@@ -63,8 +61,13 @@ Array<T> &Array<T>::operator=(const Array &other)
 {
 	if (this != &other)
 	{
-		for(size_t i = 0;i<other._len;i++)
-			this->_array[i] = other._array[i];
+		T	*tmp = new T[other._len]();
+
+		for (size_t i = 0;i<other._len;i++)
+			tmp[i] = other._array[i];
+		delete[] _array;
+		_array = tmp;
+		_len = other._len;
 	}
 	return *this;
 }
@@ -72,7 +75,7 @@ Array<T> &Array<T>::operator=(const Array &other)
 template<typename T>
 Array<T>::~Array()
 {
-
+	delete[] _array;
 }
 
 // Exception
